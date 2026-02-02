@@ -34,7 +34,7 @@ object Form2: TForm2
   end
   object txtbKorisnickoime: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
-    TabOrder = 8
+    TabOrder = 9
     TextSettings.Font.Size = 15.000000000000000000
     TextSettings.Font.StyleExt = {00070000000000000004000000}
     TextSettings.FontColor = claDarkgray
@@ -48,7 +48,7 @@ object Form2: TForm2
   end
   object txtbSifra: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
-    TabOrder = 7
+    TabOrder = 8
     TextSettings.Font.Size = 15.000000000000000000
     TextSettings.Font.StyleExt = {00070000000000000004000000}
     TextSettings.FontColor = claDarkgray
@@ -1814,11 +1814,11 @@ object Form2: TForm2
     Size.PlatformDefault = False
   end
   object ADOConnection1: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\mihaj\OneD' +
-      'rive\Desktop\mpmdelphi\Baza podataka\mpmtransport.mdb;Persist Se' +
-      'curity Info=False'
+      'rive\Dokumenti\GitHub\Projektni-zahtev-Sistem-za-izradu-softvera' +
+      '-za-transportnu-kompaniju-MPMTransport\mpmdelphi\Baza podataka\m' +
+      'pmtransport.mdb;Persist Security Info=False'
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
@@ -1826,7 +1826,6 @@ object Form2: TForm2
     Top = 440
   end
   object ADOQuery1: TADOQuery
-    Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
