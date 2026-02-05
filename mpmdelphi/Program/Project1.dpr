@@ -3,13 +3,13 @@ program Project1;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  Unit1 in 'Unit1.pas' {Form1},
-  Unit2 in 'Unit2.pas' {Form2},
-  Unit3 in 'Unit3.pas' {Form3},
-  Unit4 in 'Unit4.pas' {Form4},
-  Unit5 in 'Unit5.pas' {Form5},
-  Unit6 in 'Unit6.pas' {Form6},
-  Unit7 in 'Unit7.pas' {Form7};
+  pocetna in 'pocetna.pas' {Form1},
+  UnosPodataka in 'UnosPodataka.pas' {Form2},
+  Menadzer in 'Menadzer.pas' {Form3},
+  Admin in 'Admin.pas' {Form4},
+  Dispecer in 'Dispecer.pas' {Form5},
+  Klijent in 'Klijent.pas' {Form6},
+  Vozac in 'Vozac.pas' {Form7};
 
 {$R *.res}
 

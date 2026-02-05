@@ -1,0 +1,65 @@
+unit Admin;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls, UnosPodataka, FMX.Objects, FMX.Maps,
+  FMX.ListBox, Data.DB, Data.Win.ADODB;
+
+type
+  TForm4 = class(TForm)
+    SpeedButton1: TSpeedButton;
+    MapView1: TMapView;
+    Text1: TText;
+    btnChat: TButton;
+    btnOtvoriNalog: TButton;
+    btnUpravljajNalozima: TButton;
+    ADOConnection1: TADOConnection;
+    ADOQuery1: TADOQuery;
+    ComboKorisniciAdmin: TComboBox;
+    DugmeUdjiAdmin: TButton;
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure DugmeUdjiAdminClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+
+{$R *.fmx}
+
+procedure TForm4.DugmeUdjiAdminClick(Sender: TObject);
+begin
+var
+IzabraniID: Integer;
+begin
+  if ComboKorisniciAdmin.ItemIndex = -1 then
+  begin
+    ShowMessage('Molimo izaberite korisnika.');
+    Exit;
+  end;
+  IzabraniID := Integer(ComboKorisniciAdmin.Items.Objects[ComboKorisniciAdmin.ItemIndex]);
+  TrenutniKorisnik.ID := IzabraniID;
+  TrenutniKorisnik.KorisnickoIme := ComboKorisniciAdmin.Items[ComboKorisniciAdmin.ItemIndex];
+  TrenutniKorisnik.Role := 'Korisnik';
+  Form6.Show;
+
+
+
+end;
+
+
+procedure TForm4.SpeedButton1Click(Sender: TObject);
+begin
+Form2.Show;
+Close;
+end;
+
+end.
