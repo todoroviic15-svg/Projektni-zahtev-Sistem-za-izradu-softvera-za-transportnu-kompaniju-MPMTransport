@@ -3,7 +3,6 @@ program Project1;
 uses
   System.StartUpCopy,
   FMX.Forms,
-<<<<<<< HEAD
   PocetnaStranica in 'PocetnaStranica.pas' {Form1},
   LoginForma in 'LoginForma.pas' {Form2},
   MenadzerForma in 'MenadzerForma.pas' {Form3},
@@ -11,15 +10,6 @@ uses
   DispecerForma in 'DispecerForma.pas' {Form5},
   KlijentForma in 'KlijentForma.pas' {Form6},
   VozacForma in 'VozacForma.pas' {Form7};
-=======
-  pocetna in 'pocetna.pas' {Form1},
-  UnosPodataka in 'UnosPodataka.pas' {Form2},
-  Menadzer in 'Menadzer.pas' {Form3},
-  Admin in 'Admin.pas' {Form4},
-  Unit5 in 'Unit5.pas' {Form5},
-  Unit6 in 'Unit6.pas' {Form6},
-  Vozac in 'Vozac.pas' {Form7};
->>>>>>> 8bad8aebb38859d0e03c5c82e84aa38e76582151
 
 {$R *.res}
 

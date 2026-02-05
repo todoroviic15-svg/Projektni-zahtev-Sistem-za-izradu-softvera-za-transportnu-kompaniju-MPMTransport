@@ -30,11 +30,7 @@ object Form3: TForm3
     Size.Height = 79.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'PrijavaBtnStyle1'
-<<<<<<<< HEAD:mpmdelphi/Program/MenadzerForma.fmx
     TabOrder = 6
-========
-    TabOrder = 7
->>>>>>>> 8bad8aebb38859d0e03c5c82e84aa38e76582151:mpmdelphi/Program/Menadzer.fmx
     Text = 'Isporuke'
     TextSettings.Font.Size = 15.000000000000000000
     TextSettings.Font.StyleExt = {00070000000200000004000000}
