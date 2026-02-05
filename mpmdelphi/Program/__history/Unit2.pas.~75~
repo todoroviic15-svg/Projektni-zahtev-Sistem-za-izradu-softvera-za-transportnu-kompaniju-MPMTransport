@@ -22,8 +22,6 @@ type
     Image1: TImage;
     ADOConnection1: TADOConnection;
     ADOQuery1: TADOQuery;
-    ADOQuery1korisnickoime: TWideStringField;
-    ADOQuery1sifra: TWideStringField;
     DataSource1: TDataSource;
     procedure PrijavaBtnClick(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
@@ -40,40 +38,50 @@ implementation
 
 {$R *.fmx}
 
-uses Unit3, Unit4;
+uses Unit3, Unit4, Unit5,Unit6,Unit7;
 
 procedure TForm2.PrijavaBtnClick(Sender: TObject);
-var user: string;
+    var
+  role: string;
 begin
 
-user := ADOQuery1.FieldByName('korisnickoime').AsString;
-user := ADOQuery1.FieldByName('sifra').AsString;
+
 
                ADOQuery1.Close;
-               ADOQuery1.SQL.Text :='SELECT korisnickoime FROM login WHERE korisnickoime = :u AND sifra = :p';
+  ADOQuery1.SQL.Text :=
+    'SELECT role FROM login ' +
+    'WHERE Trim(korisnickoime)=:u AND Trim(sifra)=:p';
 
-               ADOQuery1.Parameters.ParamByName('u').Value := txtbKorisnickoime.Text;
-               ADOQuery1.Parameters.ParamByName('p').Value := txtbSifra.Text;
+  ADOQuery1.Parameters.ParamByName('u').Value :=
+    Trim(txtbKorisnickoime.Text);
+  ADOQuery1.Parameters.ParamByName('p').Value :=
+    Trim(txtbSifra.Text);
 
-               ADOQuery1.Open;
+  ADOQuery1.Open;
 
-               if not ADOQuery1.Eof then
+  if not ADOQuery1.Eof then
+
+
 begin
-  if SameText(txtbKorisnickoime.Text, 'menadzerprvi','prvimenadzer') then
-    Form3.Show
-  else if SameText(txtbKorisnickoime.Text, 'administratorprvi') then
-    Form4.Show
+    role := ADOQuery1.FieldByName('role').AsString;
+
+    if SameText(role, 'menadzer') then
+      Form3.Show
+    else if SameText(role, 'administrator') then
+      Form4.Show
+      else if SameText(role, 'dispecer') then
+      Form5.Show
+      else if SameText(role, 'klijent') then
+      Form6.Show
+      else if SameText(role, 'vozac') then
+      Form7.Show
+    else
+      ShowMessage('Nepoznata uloga!');
+
+    Hide;   // 👈 NE Close
+  end
   else
-    ShowMessage('Nepoznat korisnik');
-
-  Hide;
-end
-else
-  ShowMessage('Pogrešno korisničko ime ili šifra!');
-
-
-
-         Close;
+    ShowMessage('Pogrešno korisničko ime ili šifra!');
 end;
 
 procedure TForm2.SpeedButton1Click(Sender: TObject);

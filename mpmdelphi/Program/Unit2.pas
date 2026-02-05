@@ -78,7 +78,7 @@ begin
     else
       ShowMessage('Nepoznata uloga!');
 
-    Hide;   // 👈 NE Close
+    Hide;
   end
   else
     ShowMessage('Pogrešno korisničko ime ili šifra!');
