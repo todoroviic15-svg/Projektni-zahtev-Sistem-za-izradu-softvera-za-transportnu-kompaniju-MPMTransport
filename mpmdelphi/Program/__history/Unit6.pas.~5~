@@ -1,25 +1,25 @@
-unit Unit5;
+unit Unit6;
 
 interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, UnosPodataka, FMX.Objects, FMX.Maps;
+  FMX.Controls.Presentation, FMX.StdCtrls, Unit2, FMX.Objects;
 
 type
-  TForm5 = class(TForm)
+  TForm6 = class(TForm)
     SpeedButton1: TSpeedButton;
-    MapView1: TMapView;
+    Image1: TImage;
     Text1: TText;
-    Text2: TText;
-    Text3: TText;
-    Text4: TText;
-    Text5: TText;
-    txtSlobodnaVozila: TText;
-    txtVozilaUVoznji: TText;
-    txtVozilaNaUtovaru: TText;
-    txtVozilaSaProblemima: TText;
+    txtImeKorisnika: TText;
+    txtNazivFirme: TText;
+    txtPIB: TText;
+    txtAdresa: TText;
+    btnOtvoriNalog: TButton;
+    btnUrediProfil: TButton;
+    txtEmail: TText;
+    txtBrojTelefona: TText;
     procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
@@ -28,13 +28,13 @@ type
   end;
 
 var
-  Form5: TForm5;
+  Form6: TForm6;
 
 implementation
 
 {$R *.fmx}
 
-procedure TForm5.SpeedButton1Click(Sender: TObject);
+procedure TForm6.SpeedButton1Click(Sender: TObject);
 begin
 Form2.Show;
 Close;

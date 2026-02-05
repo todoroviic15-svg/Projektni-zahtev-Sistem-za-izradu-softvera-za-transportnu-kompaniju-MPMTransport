@@ -1,4 +1,4 @@
-unit Unit5;
+unit Admin;
 
 interface
 
@@ -8,18 +8,13 @@ uses
   FMX.Controls.Presentation, FMX.StdCtrls, UnosPodataka, FMX.Objects, FMX.Maps;
 
 type
-  TForm5 = class(TForm)
+  TForm4 = class(TForm)
     SpeedButton1: TSpeedButton;
     MapView1: TMapView;
     Text1: TText;
-    Text2: TText;
-    Text3: TText;
-    Text4: TText;
-    Text5: TText;
-    txtSlobodnaVozila: TText;
-    txtVozilaUVoznji: TText;
-    txtVozilaNaUtovaru: TText;
-    txtVozilaSaProblemima: TText;
+    btnChat: TButton;
+    btnOtvoriNalog: TButton;
+    btnUpravljajNalozima: TButton;
     procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
@@ -28,13 +23,13 @@ type
   end;
 
 var
-  Form5: TForm5;
+  Form4: TForm4;
 
 implementation
 
 {$R *.fmx}
 
-procedure TForm5.SpeedButton1Click(Sender: TObject);
+procedure TForm4.SpeedButton1Click(Sender: TObject);
 begin
 Form2.Show;
 Close;
