@@ -128,31 +128,31 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="Unit1.pas">
+        <DCCReference Include="PocetnaStranica.pas">
             <Form>Form1</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Unit2.pas">
+        <DCCReference Include="LoginForma.pas">
             <Form>Form2</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Unit3.pas">
+        <DCCReference Include="MenadzerForma.pas">
             <Form>Form3</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Unit4.pas">
+        <DCCReference Include="AdministratorForma.pas">
             <Form>Form4</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Unit5.pas">
+        <DCCReference Include="DispecerForma.pas">
             <Form>Form5</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Unit6.pas">
+        <DCCReference Include="KlijentForma.pas">
             <Form>Form6</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Unit7.pas">
+        <DCCReference Include="VozacForma.pas">
             <Form>Form7</Form>
             <FormType>fmx</FormType>
         </DCCReference>
