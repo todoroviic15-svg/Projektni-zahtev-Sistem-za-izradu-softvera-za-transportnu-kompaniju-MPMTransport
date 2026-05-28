@@ -1,5 +1,11 @@
 program Project1;
 
+
+
+
+
+
+
 uses
   System.StartUpCopy,
   FMX.Forms,
@@ -11,7 +17,8 @@ uses
   Klijent in 'Klijent.pas' {Form6},
   Vozac in 'Vozac.pas' {Form7},
   Unit8 in 'Unit8.pas' {IsporukaStartStop},
-  Unit9 in 'Unit9.pas' {Form9};
+  Unit9 in 'Unit9.pas' {Form9},
+  Unit10 in 'Unit10.pas' {Form10};
 
 {$R *.res}
 
@@ -26,5 +33,7 @@ begin
   Application.CreateForm(TForm7, Form7);
   Application.CreateForm(TIsporukaStartStop, IsporukaStartStop);
   Application.CreateForm(TForm9, Form9);
+  Application.CreateForm(TForm10, Form10);
+  Application.CreateForm(TForm10, Form10);
   Application.Run;
 end.

@@ -37,6 +37,7 @@ implementation
 procedure TForm7.btnIsporukeClick(Sender: TObject);
 begin
         with TIsporukaStartStop.Create(Self) do Show;
+        Hide;
 end;
 
 procedure TForm7.FormCreate(Sender: TObject);

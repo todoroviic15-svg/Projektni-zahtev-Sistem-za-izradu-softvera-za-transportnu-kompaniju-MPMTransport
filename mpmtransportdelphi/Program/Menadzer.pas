@@ -6,7 +6,7 @@ uses
     System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects, FMX.Maps,
-  UnosPodataka, Data.DB, Data.Win.ADODB, FMX.Edit, FMX.ListBox;
+  UnosPodataka, Data.DB, Data.Win.ADODB, FMX.Edit, FMX.ListBox, Unit9, Unit10;
   type
   TPrijavljeniKorisnik = record
     ID: Integer;
@@ -32,9 +32,12 @@ type
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure DugmeIzaberiKorisnikaClick(Sender: TObject);
+    procedure PrijavaBtnClick(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
 
   private
  procedure PopuniComboKorisnike;
+
   public
 
     { Public declarations }
@@ -53,6 +56,12 @@ uses Vozac;
 
 
 
+
+procedure TForm3.Button3Click(Sender: TObject);
+begin
+         Form10.Show;
+         Hide;
+end;
 
 procedure TForm3.DugmeIzaberiKorisnikaClick(Sender: TObject);
 var
@@ -104,6 +113,12 @@ begin
     );
     ADOQuery1.Next;
   end;
+end;
+
+procedure TForm3.PrijavaBtnClick(Sender: TObject);
+begin
+         Form10.Show;
+         Hide;
 end;
 
 end.

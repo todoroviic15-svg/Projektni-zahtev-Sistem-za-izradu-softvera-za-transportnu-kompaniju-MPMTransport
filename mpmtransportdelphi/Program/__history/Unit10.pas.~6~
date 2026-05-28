@@ -1,0 +1,88 @@
+unit Unit10;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, System.Rtti,
+  FMX.Grid.Style, Data.DB, Data.Win.ADODB, FMX.StdCtrls, FMX.Grid,
+  FMX.Controls.Presentation, FMX.ScrollBox;
+
+type
+  TForm10 = class(TForm)
+    StringGridVoznje: TStringGrid;
+    IntegerColumn1: TIntegerColumn;
+    DateTimeColumn1: TDateTimeColumn;
+    StringColumn1: TStringColumn;
+    IntegerColumn2: TIntegerColumn;
+    IntegerColumn3: TIntegerColumn;
+    DateTimeColumn2: TDateTimeColumn;
+    StringColumn2: TStringColumn;
+    IntegerColumn4: TIntegerColumn;
+    StringColumn3: TStringColumn;
+    btnPrikazTroskova: TButton;
+    ADOConnection1: TADOConnection;
+    ADOQueryVoznje: TADOQuery;
+    procedure FormShow(Sender: TObject);
+  private
+  procedure UcitajVoznje;
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form10: TForm10;
+
+implementation
+   procedure TForm10.UcitajVoznje;
+var
+  Row: Integer;
+  Status: string;
+begin
+  ADOQueryVoznje.Close;
+  ADOQueryVoznje.SQL.Text := 'SELECT * FROM T_Voznja ORDER BY ID DESC';
+  ADOQueryVoznje.Open;
+
+
+  StringGridVoznje.RowCount := 1;
+
+  Row := 1;
+
+  while not ADOQueryVoznje.Eof do
+  begin
+    StringGridVoznje.RowCount := Row + 1;
+
+    if ADOQueryVoznje.FieldByName('VremeKraja').IsNull then
+      Status := 'U toku'
+    else
+      Status := 'Zavrsena';
+
+    StringGridVoznje.Cells[0, Row] := ADOQueryVoznje.FieldByName('ID').AsString;
+    StringGridVoznje.Cells[1, Row] := Status;
+    StringGridVoznje.Cells[2, Row] := FormatDateTime('hh:nn', VarToDateTime(ADOQueryVoznje.FieldByName('VremePocetka').Value));
+    StringGridVoznje.Cells[3, Row] := ADOQueryVoznje.FieldByName('LokacijaPocetak').AsString;
+    StringGridVoznje.Cells[4, Row] := ADOQueryVoznje.FieldByName('GorivoPocetak').AsString;
+    StringGridVoznje.Cells[5, Row] := ADOQueryVoznje.FieldByName('TrajanjeSekunde').AsString;
+    if not ADOQueryVoznje.FieldByName('VremeKraja').IsNull
+      then StringGridVoznje.Cells[6, Row] := FormatDateTime('hh:nn', VarToDateTime(ADOQueryVoznje.FieldByName('VremeKraja').Value))
+    else
+  StringGridVoznje.Cells[6, Row] := '-';
+    StringGridVoznje.Cells[7, Row] := ADOQueryVoznje.FieldByName('LokacijaKraj').AsString;
+    StringGridVoznje.Cells[8, Row] := ADOQueryVoznje.FieldByName('GorivoKraj').AsString;
+
+    Inc(Row);
+    ADOQueryVoznje.Next;
+  end;
+
+  ADOQueryVoznje.Close;
+end;
+{$R *.fmx}
+
+procedure TForm10.FormShow(Sender: TObject);
+begin
+              ADOConnection1.Connected := True;
+  UcitajVoznje;
+end;
+
+end.

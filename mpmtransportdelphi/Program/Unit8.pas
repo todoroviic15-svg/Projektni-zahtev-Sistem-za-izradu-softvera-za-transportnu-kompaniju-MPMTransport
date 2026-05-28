@@ -80,8 +80,7 @@ begin
 
           ADOQuery1.SQL.Clear;
   ADOQuery1.SQL.Add(
-    'INSERT INTO T_Voznja ' +
-    '(VremePocetka, LokacijaPocetak, GorivoPocetak) ' +
+    'INSERT INTO T_Voznja (VremePocetka, LokacijaPocetak, GorivoPocetak) ' +
     'VALUES (:vp, :lp, :gp)'
   );
 
@@ -91,11 +90,16 @@ begin
 
   ADOQuery1.ExecSQL;
 
-  ADOQuery1.SQL.Clear;
-  ADOQuery1.SQL.Add('SELECT @@IDENTITY AS ID');
-  ADOQuery1.Open;
 
-  TrenutnaVoznjaID := ADOQuery1.FieldByName('ID').AsInteger;
+
+
+ADOQuery1.SQL.Clear;
+ADOQuery1.SQL.Add('SELECT TOP 1 ID FROM T_Voznja ORDER BY ID DESC');
+ADOQuery1.Open;
+
+TrenutnaVoznjaID := ADOQuery1.FieldByName('ID').AsInteger;
+
+ADOQuery1.Close;
 end;
 
 
@@ -140,11 +144,14 @@ begin
   ADOQuery1.Parameters.ParamByName('id').Value := TrenutnaVoznjaID;
 
   ADOQuery1.ExecSQL;
+
+  Close;
+
 end;
 
 procedure TIsporukaStartStop.FormCreate(Sender: TObject);
 begin
-           ADOConnection1.LoginPrompt := False;
+             ADOConnection1.LoginPrompt := False;
   ADOConnection1.Connected := True;
 end;
 

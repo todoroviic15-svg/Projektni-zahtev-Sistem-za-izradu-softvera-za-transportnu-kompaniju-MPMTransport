@@ -1,0 +1,39 @@
+unit Unit10;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, System.Rtti,
+  FMX.Grid.Style, Data.DB, Data.Win.ADODB, FMX.StdCtrls, FMX.Grid,
+  FMX.Controls.Presentation, FMX.ScrollBox;
+
+type
+  TForm10 = class(TForm)
+    StringGridVoznje: TStringGrid;
+    IntegerColumn1: TIntegerColumn;
+    DateTimeColumn1: TDateTimeColumn;
+    StringColumn1: TStringColumn;
+    IntegerColumn2: TIntegerColumn;
+    IntegerColumn3: TIntegerColumn;
+    DateTimeColumn2: TDateTimeColumn;
+    StringColumn2: TStringColumn;
+    IntegerColumn4: TIntegerColumn;
+    StringColumn3: TStringColumn;
+    btnPrikazTroskova: TButton;
+    ADOConnection1: TADOConnection;
+    ADOQueryVoznje: TADOQuery;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form10: TForm10;
+
+implementation
+
+{$R *.fmx}
+
+end.

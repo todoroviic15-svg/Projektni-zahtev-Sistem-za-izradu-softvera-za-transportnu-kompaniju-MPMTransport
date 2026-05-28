@@ -1,0 +1,82 @@
+object Form9: TForm9
+  Left = 0
+  Top = 0
+  Caption = 'Form9'
+  ClientHeight = 536
+  ClientWidth = 324
+  Fill.Color = claLightgray
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object StringGridVoznje: TStringGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 308.000000000000000000
+    Size.Height = 305.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Viewport.Width = 288.000000000000000000
+    Viewport.Height = 264.000000000000000000
+    object IntegerColumn1: TIntegerColumn
+      HeaderSettings.TextSettings.WordWrap = False
+    end
+    object DateTimeColumn1: TDateTimeColumn
+      HeaderSettings.TextSettings.WordWrap = False
+    end
+    object StringColumn1: TStringColumn
+      HeaderSettings.TextSettings.WordWrap = False
+    end
+    object IntegerColumn2: TIntegerColumn
+      HeaderSettings.TextSettings.WordWrap = False
+    end
+    object IntegerColumn3: TIntegerColumn
+      HeaderSettings.TextSettings.WordWrap = False
+    end
+    object DateTimeColumn2: TDateTimeColumn
+      HeaderSettings.TextSettings.WordWrap = False
+    end
+    object StringColumn2: TStringColumn
+      HeaderSettings.TextSettings.WordWrap = False
+    end
+    object IntegerColumn4: TIntegerColumn
+      HeaderSettings.TextSettings.WordWrap = False
+    end
+    object StringColumn3: TStringColumn
+      HeaderSettings.TextSettings.WordWrap = False
+    end
+  end
+  object btnDetalji: TButton
+    StyledSettings = [Family]
+    Position.X = 32.000000000000000000
+    Position.Y = 336.000000000000000000
+    Size.Width = 249.000000000000000000
+    Size.Height = 62.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Detalji vo'#382'nje'
+    TextSettings.Font.Size = 30.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.FontColor = claOrange
+    TextSettings.Trimming = None
+  end
+  object ADOQueryVoznje: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    Left = 256
+    Top = 488
+  end
+  object ADOConnection1: TADOConnection
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\mihaj\OneD' +
+      'rive\Dokumenti\GitHub\Projektni-zahtev-Sistem-za-izradu-softvera' +
+      '-za-transportnu-kompaniju-MPMTransport\mpmtransportdelphi\Progra' +
+      'm\Win32\Debug\mpmtransport.mdb;Persist Security Info=False'
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 48
+    Top = 488
+  end
+end
