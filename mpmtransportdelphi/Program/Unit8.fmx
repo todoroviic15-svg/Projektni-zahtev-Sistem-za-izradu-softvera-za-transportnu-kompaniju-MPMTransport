@@ -9,6 +9,7 @@ object IsporukaStartStop: TIsporukaStartStop
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   DesignerMasterStyle = 0
   object panelPocetak: TPanel
     Position.X = 8.000000000000000000
@@ -179,21 +180,6 @@ object IsporukaStartStop: TIsporukaStartStop
     Size.Height = 199.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
-    object btnZavrsiVoznju: TButton
-      StyledSettings = [Family]
-      Position.X = 201.000000000000000000
-      Position.Y = 61.000000000000000000
-      Size.Width = 81.000000000000000000
-      Size.Height = 79.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-      Text = 'Zavr'#353'i'
-      TextSettings.Font.Size = 20.000000000000000000
-      TextSettings.Font.StyleExt = {00090000000000000004000000}
-      TextSettings.FontColor = claGreen
-      TextSettings.Trimming = None
-      OnClick = btnStartClick
-    end
     object lblZavrsi: TLabel
       StyledSettings = [Family]
       Position.X = 49.000000000000000000
@@ -204,13 +190,13 @@ object IsporukaStartStop: TIsporukaStartStop
       TextSettings.Font.StyleExt = {00090000000000000004000000}
       TextSettings.FontColor = claGreen
       Text = 'Unesite informacije'
-      TabOrder = 4
+      TabOrder = 3
     end
     object TimeEdit2: TTimeEdit
       Time = 0.714479340277777800
       Position.X = 24.000000000000000000
       Position.Y = 57.000000000000000000
-      TabOrder = 1
+      TabOrder = 0
     end
     object Label5: TLabel
       StyledSettings = [Family, Size, FontColor]
@@ -221,7 +207,7 @@ object IsporukaStartStop: TIsporukaStartStop
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       Text = 'Vreme zavr'#353'etka vo'#382'nje:'
-      TabOrder = 2
+      TabOrder = 1
       object Label6: TLabel
         StyledSettings = [Family, Size, FontColor]
         Position.Y = 47.000000000000000000
@@ -235,7 +221,7 @@ object IsporukaStartStop: TIsporukaStartStop
     end
     object tbxKrajnjaLokacija: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
-      TabOrder = 6
+      TabOrder = 5
       Position.X = 24.000000000000000000
       Position.Y = 104.000000000000000000
     end
@@ -248,7 +234,7 @@ object IsporukaStartStop: TIsporukaStartStop
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       Text = 'Zavr'#353'na koli'#269'ina goriva(L):'
-      TabOrder = 3
+      TabOrder = 2
       object Label8: TLabel
         StyledSettings = [Family, Size, FontColor]
         Position.X = 41.000000000000000000
@@ -263,12 +249,27 @@ object IsporukaStartStop: TIsporukaStartStop
     end
     object txbKrajnjeGorivo: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
-      TabOrder = 5
+      TabOrder = 4
       Position.X = 24.000000000000000000
       Position.Y = 157.000000000000000000
       Size.Width = 33.000000000000000000
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
+    end
+    object btnZavrsi: TButton
+      StyledSettings = [Family]
+      Position.X = 201.000000000000000000
+      Position.Y = 72.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 81.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'Zavr'#353'i'
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00090000000000000004000000}
+      TextSettings.FontColor = claGreen
+      TextSettings.Trimming = None
+      OnClick = btnZavrsiClick
     end
   end
   object Timer1: TTimer
@@ -276,5 +277,23 @@ object IsporukaStartStop: TIsporukaStartStop
     OnTimer = Timer1Timer
     Left = 16
     Top = 201
+  end
+  object ADOQuery1: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    Left = 16
+    Top = 24
+  end
+  object ADOConnection1: TADOConnection
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\mihaj\OneD' +
+      'rive\Dokumenti\GitHub\Projektni-zahtev-Sistem-za-izradu-softvera' +
+      '-za-transportnu-kompaniju-MPMTransport\mpmtransportdelphi\Progra' +
+      'm\Win32\Debug\mpmtransport.mdb;Persist Security Info=False'
+    LoginPrompt = False
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 264
+    Top = 40
   end
 end
