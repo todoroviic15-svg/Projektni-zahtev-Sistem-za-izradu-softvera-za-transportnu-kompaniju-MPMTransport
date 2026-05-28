@@ -93,7 +93,8 @@ var
 begin
 
   ADOQueryVoznje.Close;
-  ADOQueryVoznje.SQL.Text := 'SELECT * FROM T_Voznja WHERE ID = :ID';
+  ADOQueryVoznje.SQL.Text :=
+    'SELECT * FROM T_Voznja WHERE ID = :ID';
   ADOQueryVoznje.Parameters.ParamByName('ID').Value := SelectedID;
   ADOQueryVoznje.Open;
 
