@@ -4,8 +4,8 @@ interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,    Isporuke,
-  FMX.Controls.Presentation, FMX.StdCtrls,UnosPodataka, FMX.Objects, FMX.Maps, Data.DB, Data.Win.ADODB, Menadzer;
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls,UnosPodataka, FMX.Objects, FMX.Maps, Data.DB, Data.Win.ADODB, Menadzer, Unit8;
 
 type
   TForm7 = class(TForm)
@@ -29,13 +29,14 @@ var
 
 implementation
 
+
+
  {$R *.fmx}
 
 
 procedure TForm7.btnIsporukeClick(Sender: TObject);
 begin
-            Form8.Show;
-            Hide;
+        with TIsporukaStartStop.Create(Self) do Show;
 end;
 
 procedure TForm7.FormCreate(Sender: TObject);

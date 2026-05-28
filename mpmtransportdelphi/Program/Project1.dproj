@@ -156,8 +156,12 @@
             <Form>Form7</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Isporuke.pas">
-            <Form>pocetakInfo</Form>
+        <DCCReference Include="Unit8.pas">
+            <Form>IsporukaStartStop</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit9.pas">
+            <Form>Form9</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

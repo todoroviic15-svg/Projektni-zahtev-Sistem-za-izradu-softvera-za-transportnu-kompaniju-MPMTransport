@@ -52,6 +52,8 @@ implementation
 uses Vozac;
 
 
+
+
 procedure TForm3.DugmeIzaberiKorisnikaClick(Sender: TObject);
 var
 IzabraniID: Integer;

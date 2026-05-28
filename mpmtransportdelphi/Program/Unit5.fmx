@@ -117,4 +117,19 @@ object Form5: TForm5
       end
     end
   end
+  object btnPratiVoznju: TButton
+    StyledSettings = [Family]
+    Position.X = 72.000000000000000000
+    Position.Y = 444.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 58.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Prati vo'#382'nju'
+    TextSettings.Font.Size = 20.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.FontColor = claRed
+    TextSettings.Trimming = None
+    OnClick = btnPratiVoznjuClick
+  end
 end

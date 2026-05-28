@@ -1,0 +1,60 @@
+unit Unit8;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.DateTimeCtrls, FMX.Controls.Presentation, FMX.Edit, FMX.Objects ;
+
+type
+  TIsporukaStartStop = class(TForm)
+    panelPocetak: TPanel;
+    btnStart: TButton;
+    TimeEdit1: TTimeEdit;
+    Z: TLabel;
+    Label2: TLabel;
+    tbxPocetnaLokacija: TEdit;
+    Label1: TLabel;
+    txbPocetnoGorivo: TEdit;
+    Label3: TLabel;
+    panelUtoku: TPanel;
+    btnStop: TButton;
+    Timer1: TTimer;
+    lblTajmer: TLabel;
+    lblVremetrajanjavoznje: TLabel;
+    Label4: TLabel;
+    procedure Timer1Timer(Sender: TObject);
+    procedure btnStartClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  IsporukaStartStop: TIsporukaStartStop;
+
+implementation
+
+{$R *.fmx}
+
+procedure TIsporukaStartStop.btnStartClick(Sender: TObject);
+begin
+
+          Timer1.Enabled := true ;
+end;
+
+
+
+procedure TIsporukaStartStop.Timer1Timer(Sender: TObject);
+var
+  v: Integer;
+begin
+          v := StrToIntDef(lblTajmer.Text.Replace('s',''), 0);
+  Inc(v);
+  lblTajmer.Text := v.ToString + 's';
+end;
+
+end.

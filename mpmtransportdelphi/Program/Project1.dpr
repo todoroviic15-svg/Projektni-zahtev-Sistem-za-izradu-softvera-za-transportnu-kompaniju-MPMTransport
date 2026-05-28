@@ -10,7 +10,8 @@ uses
   Unit5 in 'Unit5.pas' {Form5},
   Klijent in 'Klijent.pas' {Form6},
   Vozac in 'Vozac.pas' {Form7},
-  Isporuke in 'Isporuke.pas' {pocetakInfo};
+  Unit8 in 'Unit8.pas' {IsporukaStartStop},
+  Unit9 in 'Unit9.pas' {Form9};
 
 {$R *.res}
 
@@ -23,6 +24,7 @@ begin
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm6, Form6);
   Application.CreateForm(TForm7, Form7);
-  Application.CreateForm(TpocetakInfo, );
+  Application.CreateForm(TIsporukaStartStop, IsporukaStartStop);
+  Application.CreateForm(TForm9, Form9);
   Application.Run;
 end.

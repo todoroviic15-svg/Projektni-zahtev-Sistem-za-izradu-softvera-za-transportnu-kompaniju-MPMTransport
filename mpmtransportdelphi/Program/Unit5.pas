@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, UnosPodataka, FMX.Objects, FMX.Maps;
+  FMX.Controls.Presentation, FMX.StdCtrls, UnosPodataka, FMX.Objects, FMX.Maps, Unit9;
 
 type
   TForm5 = class(TForm)
@@ -20,7 +20,9 @@ type
     txtVozilaUVoznji: TText;
     txtVozilaNaUtovaru: TText;
     txtVozilaSaProblemima: TText;
+    btnPratiVoznju: TButton;
     procedure SpeedButton1Click(Sender: TObject);
+    procedure btnPratiVoznjuClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,6 +35,12 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TForm5.btnPratiVoznjuClick(Sender: TObject);
+begin
+     Form9.Show;
+     Hide;
+end;
 
 procedure TForm5.SpeedButton1Click(Sender: TObject);
 begin
