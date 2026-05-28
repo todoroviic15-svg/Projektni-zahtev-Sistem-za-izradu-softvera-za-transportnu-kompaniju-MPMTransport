@@ -34,7 +34,7 @@ implementation
 
 procedure TForm7.btnIsporukeClick(Sender: TObject);
 begin
-            Form8.Show;
+            Form7.Show;
             Hide;
 end;
 

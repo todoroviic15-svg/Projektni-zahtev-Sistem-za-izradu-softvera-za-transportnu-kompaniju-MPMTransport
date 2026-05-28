@@ -9,8 +9,7 @@ uses
   Admin in 'Admin.pas' {Form4},
   Unit5 in 'Unit5.pas' {Form5},
   Klijent in 'Klijent.pas' {Form6},
-  Vozac in 'Vozac.pas' {Form7},
-  Isporuke in 'Isporuke.pas' {pocetakInfo};
+  Vozac in 'Vozac.pas' {Form7};
 
 {$R *.res}
 
@@ -23,6 +22,5 @@ begin
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm6, Form6);
   Application.CreateForm(TForm7, Form7);
-  Application.CreateForm(TpocetakInfo, );
   Application.Run;
 end.

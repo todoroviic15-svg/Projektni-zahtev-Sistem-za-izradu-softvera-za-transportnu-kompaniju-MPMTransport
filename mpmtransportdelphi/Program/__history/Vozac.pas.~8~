@@ -28,7 +28,7 @@ var
   Form7: TForm7;
 
 implementation
-
+uses Isporuke;
  {$R *.fmx}
 
 

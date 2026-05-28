@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls,Unit2, FMX.Objects, FMX.Maps;
+  FMX.Controls.Presentation, FMX.StdCtrls,UnosPodataka, FMX.Objects, FMX.Maps, Data.DB, Data.Win.ADODB, Menadzer;
 
 type
   TForm7 = class(TForm)
@@ -15,19 +15,29 @@ type
     btnIsporuke: TButton;
     btnProfil: TButton;
     btnChat: TButton;
+    ADOConnection1: TADOConnection;
+    ADOQuery1: TADOQuery;
     procedure SpeedButton1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
-    { Private declarations }
   public
-    { Public declarations }
   end;
 
 var
   Form7: TForm7;
 
 implementation
+ {$R *.fmx}
 
-{$R *.fmx}
+
+procedure TForm7.FormCreate(Sender: TObject);
+begin
+ADOConnection1.ConnectionString :=
+  'Provider=Microsoft.Jet.OLEDB.4.0;' +
+  'Data Source=' + ExtractFilePath(ParamStr(0)) + 'mpmtransport.mdb;';
+ADOConnection1.LoginPrompt := False;
+ADOConnection1.Connected := True;
+end;
 
 procedure TForm7.SpeedButton1Click(Sender: TObject);
 begin

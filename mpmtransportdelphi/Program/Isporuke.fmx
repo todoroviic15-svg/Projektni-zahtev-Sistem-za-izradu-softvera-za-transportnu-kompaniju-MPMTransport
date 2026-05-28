@@ -1,0 +1,121 @@
+object pocetakInfo: TpocetakInfo
+  Left = 0
+  Top = 0
+  Caption = 'Form8'
+  ClientHeight = 536
+  ClientWidth = 324
+  Fill.Color = claLightgray
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object pocetakVoznje: TPanel
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 308.000000000000000000
+    Size.Height = 177.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object btnStart: TButton
+      Position.X = 192.000000000000000000
+      Position.Y = 26.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 76.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Start'
+      TextSettings.Trimming = None
+      OnClick = btnStartClick
+    end
+    object txtbPLokacija: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Position.X = 24.000000000000000000
+      Position.Y = 34.000000000000000000
+    end
+    object vremePocetno: TTimeEdit
+      Time = 0.140182557870370400
+      Position.X = 24.000000000000000000
+      Position.Y = 88.000000000000000000
+      TabOrder = 2
+    end
+    object pocetnoGorivoL: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 3
+      Position.X = 24.000000000000000000
+      Position.Y = 144.000000000000000000
+    end
+    object Text1: TText
+      Position.X = 24.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Po'#269'etna lokacija:'
+      object Text2: TText
+        Position.Y = 56.000000000000000000
+        Size.Width = 97.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Po'#269'etno vreme:'
+        object Text3: TText
+          Position.Y = 54.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Koli'#269'ina goriva pre vo'#382'nje:'
+        end
+      end
+    end
+  end
+  object Panel1: TPanel
+    Position.X = 8.000000000000000000
+    Position.Y = 193.000000000000000000
+    Size.Width = 308.000000000000000000
+    Size.Height = 120.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Text4: TText
+      Position.X = 80.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Vo'#382'nja u toku'
+    end
+    object lblTimer: TLabel
+      Position.X = 118.000000000000000000
+      Position.Y = 64.000000000000000000
+      Size.Width = 67.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = '00:00'
+      TabOrder = 1
+    end
+    object btnStop: TButton
+      Position.X = 220.000000000000000000
+      Position.Y = 34.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 78.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Stop'
+      TextSettings.Trimming = None
+      OnClick = btnStopClick
+    end
+  end
+  object Panel2: TPanel
+    Position.X = 8.000000000000000000
+    Position.Y = 321.000000000000000000
+    Size.Width = 308.000000000000000000
+    Size.Height = 207.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 32
+    Top = 241
+  end
+end

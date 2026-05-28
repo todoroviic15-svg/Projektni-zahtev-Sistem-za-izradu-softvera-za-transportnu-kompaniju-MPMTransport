@@ -44,12 +44,10 @@ var
   Form3: TForm3;
 
 implementation
-
+uses Vozac;
 
 
 {$R *.fmx}
-
-uses Vozac;
 
 
 procedure TForm3.DugmeIzaberiKorisnikaClick(Sender: TObject);

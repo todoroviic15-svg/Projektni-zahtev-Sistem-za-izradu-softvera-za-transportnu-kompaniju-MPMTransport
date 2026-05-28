@@ -28,7 +28,6 @@ var
   Form7: TForm7;
 
 implementation
-
  {$R *.fmx}
 
 
