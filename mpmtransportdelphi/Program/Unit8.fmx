@@ -278,6 +278,15 @@ object IsporukaStartStop: TIsporukaStartStop
     Left = 16
     Top = 201
   end
+  object SpeedButton1: TSpeedButton
+    Size.Width = 33.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'arrowlefttoolbutton'
+    Text = 'SpeedButton1'
+    TextSettings.Trimming = None
+    OnClick = SpeedButton1Click
+  end
   object ADOQuery1: TADOQuery
     Connection = ADOConnection1
     Parameters = <>

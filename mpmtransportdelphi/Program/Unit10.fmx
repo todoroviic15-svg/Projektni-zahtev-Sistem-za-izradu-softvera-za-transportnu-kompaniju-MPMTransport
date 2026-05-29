@@ -15,7 +15,7 @@ object Form10: TForm10
     CanFocus = True
     ClipChildren = True
     Position.X = 8.000000000000000000
-    Position.Y = 8.000000000000000000
+    Position.Y = 40.000000000000000000
     Size.Width = 308.000000000000000000
     Size.Height = 305.000000000000000000
     Size.PlatformDefault = False
@@ -50,11 +50,21 @@ object Form10: TForm10
     object StringColumn3: TStringColumn
       HeaderSettings.TextSettings.WordWrap = False
     end
+    object SpeedButton1: TSpeedButton
+      Position.X = -10.000000000000000000
+      Position.Y = -64.000000000000000000
+      Size.Width = 33.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowlefttoolbutton'
+      Text = 'SpeedButton1'
+      TextSettings.Trimming = None
+    end
   end
   object btnPrikazTroskova: TButton
     StyledSettings = [Family]
     Position.X = 32.000000000000000000
-    Position.Y = 336.000000000000000000
+    Position.Y = 376.000000000000000000
     Size.Width = 249.000000000000000000
     Size.Height = 62.000000000000000000
     Size.PlatformDefault = False
@@ -65,6 +75,16 @@ object Form10: TForm10
     TextSettings.FontColor = claYellow
     TextSettings.Trimming = None
     OnClick = btnPrikazTroskovaClick
+  end
+  object SpeedButton2: TSpeedButton
+    Position.Y = -1.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'arrowlefttoolbutton'
+    Text = 'SpeedButton1'
+    TextSettings.Trimming = None
+    OnClick = SpeedButton2Click
   end
   object ADOConnection1: TADOConnection
     ConnectionString = 

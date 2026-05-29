@@ -23,10 +23,13 @@ type
     btnPrikazTroskova: TButton;
     ADOConnection1: TADOConnection;
     ADOQueryVoznje: TADOQuery;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
     procedure FormShow(Sender: TObject);
     procedure StringGridVoznjeCellClick(const Column: TColumn;
       const Row: Integer);
     procedure btnPrikazTroskovaClick(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
   private
   SelectedID: Integer;
   procedure UcitajVoznje;
@@ -39,6 +42,8 @@ var
   Form10: TForm10;
 
 implementation
+uses Menadzer;
+
    procedure TForm10.UcitajVoznje;
 var
   Row: Integer;
@@ -121,6 +126,12 @@ procedure TForm10.FormShow(Sender: TObject);
 begin
               ADOConnection1.Connected := True;
   UcitajVoznje;
+end;
+
+procedure TForm10.SpeedButton2Click(Sender: TObject);
+begin
+Form3.Show;
+Close;
 end;
 
 procedure TForm10.StringGridVoznjeCellClick(const Column: TColumn;

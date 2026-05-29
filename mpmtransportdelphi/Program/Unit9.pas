@@ -23,10 +23,12 @@ type
     StringColumn2: TStringColumn;
     IntegerColumn4: TIntegerColumn;
     StringColumn3: TStringColumn;
+    SpeedButton1: TSpeedButton;
     procedure FormShow(Sender: TObject);
     procedure StringGridVoznjeCellClick(const Column: TColumn;
       const Row: Integer);
     procedure btnDetaljiClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
 
    SelectedID: Integer;
@@ -39,6 +41,7 @@ var
   Form9: TForm9;
 
 implementation
+uses Unit5;
 
 procedure TForm9.UcitajVoznje;
 var
@@ -126,6 +129,12 @@ begin
 end;
 
 
+
+procedure TForm9.SpeedButton1Click(Sender: TObject);
+begin
+   Form5.Show;
+   Close;
+end;
 
 procedure TForm9.StringGridVoznjeCellClick(const Column: TColumn;
   const Row: Integer);

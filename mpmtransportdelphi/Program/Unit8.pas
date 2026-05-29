@@ -38,12 +38,14 @@ type
     ADOQuery1: TADOQuery;
     ADOConnection1: TADOConnection;
     btnZavrsi: TButton;
+    SpeedButton1: TSpeedButton;
     procedure Timer1Timer(Sender: TObject);
     procedure btnStartClick(Sender: TObject);
     procedure btnPauzaClick(Sender: TObject);
     procedure btnStopClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnZavrsiClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
 
   private
   var
@@ -58,6 +60,7 @@ var
   IsporukaStartStop: TIsporukaStartStop;
 
 implementation
+uses Vozac;
 
 {$R *.fmx}
 
@@ -153,6 +156,12 @@ procedure TIsporukaStartStop.FormCreate(Sender: TObject);
 begin
              ADOConnection1.LoginPrompt := False;
   ADOConnection1.Connected := True;
+end;
+
+procedure TIsporukaStartStop.SpeedButton1Click(Sender: TObject);
+begin
+        Form7.Show;
+        Hide;
 end;
 
 procedure TIsporukaStartStop.Timer1Timer(Sender: TObject);
