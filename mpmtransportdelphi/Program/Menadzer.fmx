@@ -31,7 +31,7 @@ object Form3: TForm3
     Size.Height = 79.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'PrijavaBtnStyle1'
-    TabOrder = 14
+    TabOrder = 17
     Text = 'Isporuke'
     TextSettings.Font.Size = 15.000000000000000000
     TextSettings.Font.StyleExt = {00070000000200000004000000}
@@ -124,6 +124,10 @@ object Form3: TForm3
     Top = 488
   end
   object ADOConnection1: TADOConnection
+    ConnectionString = 
+      'C:\Users\Michael\Documents\GitHub\Projektni-zahtev-Sistem-za-izr' +
+      'adu-softvera-za-transportnu-kompaniju-MPMTransport\mpmtransportd' +
+      'elphi\Program\Win32\Debug\mpmtransport.mdb'
     Left = 264
     Top = 408
   end

@@ -295,10 +295,9 @@ object IsporukaStartStop: TIsporukaStartStop
   end
   object ADOConnection1: TADOConnection
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\mihaj\OneD' +
-      'rive\Dokumenti\GitHub\Projektni-zahtev-Sistem-za-izradu-softvera' +
-      '-za-transportnu-kompaniju-MPMTransport\mpmtransportdelphi\Progra' +
-      'm\Win32\Debug\mpmtransport.mdb;Persist Security Info=False'
+      'C:\Users\Michael\Documents\GitHub\Projektni-zahtev-Sistem-za-izr' +
+      'adu-softvera-za-transportnu-kompaniju-MPMTransport\mpmtransportd' +
+      'elphi\Program\Win32\Debug\mpmtransport.mdb'
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'

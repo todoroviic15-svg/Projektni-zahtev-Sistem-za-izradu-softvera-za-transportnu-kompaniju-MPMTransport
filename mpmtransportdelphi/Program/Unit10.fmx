@@ -21,8 +21,8 @@ object Form10: TForm10
     Size.PlatformDefault = False
     TabOrder = 0
     OnCellClick = StringGridVoznjeCellClick
-    Viewport.Width = 288.000000000000000000
-    Viewport.Height = 264.000000000000000000
+    Viewport.Width = 308.000000000000000000
+    Viewport.Height = 305.000000000000000000
     object IntegerColumn1: TIntegerColumn
       HeaderSettings.TextSettings.WordWrap = False
     end
@@ -88,10 +88,9 @@ object Form10: TForm10
   end
   object ADOConnection1: TADOConnection
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\mihaj\OneD' +
-      'rive\Dokumenti\GitHub\Projektni-zahtev-Sistem-za-izradu-softvera' +
-      '-za-transportnu-kompaniju-MPMTransport\mpmtransportdelphi\Progra' +
-      'm\Win32\Debug\mpmtransport.mdb;Persist Security Info=False'
+      'C:\Users\Michael\Documents\GitHub\Projektni-zahtev-Sistem-za-izr' +
+      'adu-softvera-za-transportnu-kompaniju-MPMTransport\mpmtransportd' +
+      'elphi\Program\Win32\Debug\mpmtransport.mdb'
     Provider = 'Microsoft.Jet.OLEDB.4.0'
     Left = 48
     Top = 488

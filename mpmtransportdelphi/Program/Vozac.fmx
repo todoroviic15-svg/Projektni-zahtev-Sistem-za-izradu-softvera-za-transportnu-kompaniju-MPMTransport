@@ -74,6 +74,10 @@ object Form7: TForm7
     end
   end
   object ADOConnection1: TADOConnection
+    ConnectionString = 
+      'C:\Users\Michael\Documents\GitHub\Projektni-zahtev-Sistem-za-izr' +
+      'adu-softvera-za-transportnu-kompaniju-MPMTransport\mpmtransportd' +
+      'elphi\Program\Win32\Debug\mpmtransport.mdb'
     Left = 208
     Top = 366
   end

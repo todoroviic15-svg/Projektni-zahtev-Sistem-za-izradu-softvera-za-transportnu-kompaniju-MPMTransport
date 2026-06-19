@@ -80,13 +80,17 @@ object Form4: TForm4
     TabOrder = 3
     object DugmeUdjiAdmin: TButton
       Position.X = 120.000000000000000000
-      TabOrder = 86
+      TabOrder = 85
       Text = 'Udji na profil'
       TextSettings.Trimming = None
       OnClick = DugmeUdjiAdminClick
     end
   end
   object ADOConnection1: TADOConnection
+    ConnectionString = 
+      'C:\Users\Michael\Documents\GitHub\Projektni-zahtev-Sistem-za-izr' +
+      'adu-softvera-za-transportnu-kompaniju-MPMTransport\mpmtransportd' +
+      'elphi\Program\Win32\Debug\mpmtransport.mdb'
     Left = 120
     Top = 448
   end
