@@ -27,18 +27,25 @@ object Form11: TForm11
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 1
     Position.X = 24.000000000000000000
-    Position.Y = 56.000000000000000000
+    Position.Y = 64.000000000000000000
   end
   object cmbMesec: TComboBox
     Position.X = 197.000000000000000000
-    Position.Y = 56.000000000000000000
+    Position.Y = 64.000000000000000000
     TabOrder = 2
   end
   object btnPrikazi: TButton
-    Position.X = 112.000000000000000000
-    Position.Y = 112.000000000000000000
+    StyledSettings = [Family]
+    Position.X = 64.000000000000000000
+    Position.Y = 113.000000000000000000
+    Size.Width = 193.000000000000000000
+    Size.Height = 46.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 3
     Text = 'Prikazi'
+    TextSettings.Font.Size = 30.000000000000000000
+    TextSettings.Font.StyleExt = {00090000000000000004000000}
+    TextSettings.FontColor = claBlue
     TextSettings.Trimming = None
     OnClick = btnPrikaziClick
   end
@@ -46,7 +53,7 @@ object Form11: TForm11
     CanFocus = True
     ClipChildren = True
     Position.X = 24.000000000000000000
-    Position.Y = 151.000000000000000000
+    Position.Y = 197.000000000000000000
     Size.Width = 273.000000000000000000
     Size.Height = 129.000000000000000000
     Size.PlatformDefault = False
@@ -76,7 +83,7 @@ object Form11: TForm11
   end
   object lblUkupnoPlanirano: TLabel
     Position.X = 26.000000000000000000
-    Position.Y = 304.000000000000000000
+    Position.Y = 334.000000000000000000
     Size.Width = 206.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
@@ -85,7 +92,7 @@ object Form11: TForm11
   end
   object lblUkupnoOstvareno: TLabel
     Position.X = 26.000000000000000000
-    Position.Y = 336.000000000000000000
+    Position.Y = 359.000000000000000000
     Size.Width = 206.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False

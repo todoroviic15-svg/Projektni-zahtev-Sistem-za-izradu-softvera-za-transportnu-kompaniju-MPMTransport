@@ -55,7 +55,7 @@ begin
       Godina := StrToIntDef(edtGodina.Text, YearOf(Date));
   Mesec := cmbMesec.ItemIndex + 1;
 
-  // --- Tabela: planirano vs ostvareno po kategoriji ---
+
   ADOQuery1.Close;
   ADOQuery1.SQL.Text :=
     'SELECT k.Naziv, ' +
@@ -104,7 +104,7 @@ begin
   lblUkupnoPlanirano.Text := 'Ukupno planirano: ' + FormatFloat('#,##0.00', UkPlan) + ' din';
   lblUkupnoOstvareno.Text := 'Ukupno ostvareno: ' + FormatFloat('#,##0.00', UkOstv) + ' din';
 
-  // --- Tabela: odluke koje su vec upisane u bazu za ovaj period ---
+
   ADOQuery1.SQL.Text :=
     'SELECT o.Godina, o.Mesec, k.Naziv AS Kategorija, o.TekstOdluke ' +
     'FROM OdlukaTroskovi o LEFT JOIN KategorijaTroska k ON k.ID = o.KategorijaID ' +

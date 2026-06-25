@@ -52,7 +52,7 @@ uses Menadzer;
 
 procedure TFormPregledTroskova.PopuniFiltere;
 begin
-  // Kategorije
+
   cmbKategorija.Items.Clear;
   cmbKategorija.Items.Add('Sve kategorije');
   ADOQuery1.Close;
@@ -67,7 +67,7 @@ begin
   ADOQuery1.Close;
   cmbKategorija.ItemIndex := 0;
 
-  // Vozila
+
   cmbVozilo.Items.Clear;
   cmbVozilo.Items.Add('Sva vozila');
   ADOQuery1.SQL.Text := 'SELECT ID, registarski_broj AS RegistarskiBroj FROM Vozila';
@@ -81,7 +81,7 @@ begin
   ADOQuery1.Close;
   cmbVozilo.ItemIndex := 0;
 
-  // Vozaci
+
   cmbVozac.Items.Clear;
   cmbVozac.Items.Add('Svi vozaci');
   ADOQuery1.SQL.Text := 'SELECT id, korisnickoime FROM login WHERE role = ''vozac''';
