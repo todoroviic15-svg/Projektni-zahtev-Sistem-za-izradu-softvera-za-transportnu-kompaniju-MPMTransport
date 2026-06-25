@@ -33,6 +33,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure DugmeIzaberiKorisnikaClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
 
   private
  procedure PopuniComboKorisnike;
@@ -51,15 +52,21 @@ implementation
 
 {$R *.fmx}
 
-uses Vozac, PregledTroskova;
+uses Vozac, PregledTroskova, AnalizaTroskova;
 
 
 
+
+procedure TForm3.Button2Click(Sender: TObject);
+begin
+      Form11.Show;
+      Hide;
+end;
 
 procedure TForm3.Button3Click(Sender: TObject);
 begin
-        PregledTroskova.Show;
-        Hide;
+           FormPregledTroskova.Show;
+          Hide;
 end;
 
 procedure TForm3.DugmeIzaberiKorisnikaClick(Sender: TObject);

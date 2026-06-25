@@ -1,8 +1,8 @@
-object Form11: TForm11
+object FormPregledTroskova: TFormPregledTroskova
   Left = 0
   Top = 0
   ActiveControl = dtOd
-  Caption = 'Form11'
+  Caption = 'PregledTroskova'
   ClientHeight = 536
   ClientWidth = 324
   Fill.Color = claLightgray
@@ -46,13 +46,13 @@ object Form11: TForm11
     TabOrder = 4
   end
   object cmbVozac: TComboBox
-    Position.X = 24.000000000000000000
+    Position.X = 111.000000000000000000
     Position.Y = 152.000000000000000000
     TabOrder = 5
   end
   object btnPrikazi: TButton
-    Position.X = 205.000000000000000000
-    Position.Y = 152.000000000000000000
+    Position.X = 111.000000000000000000
+    Position.Y = 232.000000000000000000
     Size.Width = 100.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
@@ -65,62 +65,79 @@ object Form11: TForm11
     CanFocus = True
     ClipChildren = True
     Position.X = 24.000000000000000000
-    Position.Y = 208.000000000000000000
+    Position.Y = 279.000000000000000000
     Size.Width = 281.000000000000000000
     Size.Height = 169.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 7
     Viewport.Width = 261.000000000000000000
-    Viewport.Height = 144.000000000000000000
+    Viewport.Height = 128.000000000000000000
     object StringColumn1: TStringColumn
       Header = 'ID'
       HeaderSettings.TextSettings.WordWrap = False
-      Size.Width = 27.000000000000000000
+      Size.Width = 25.000000000000000000
+    end
+    object TStringColumn
+      Header = 'Kategorija'
+      HeaderSettings.TextSettings.WordWrap = False
+      Size.Width = 84.000000000000000000
     end
     object StringColumn2: TStringColumn
       Header = 'Datum'
       HeaderSettings.TextSettings.WordWrap = False
-      Size.Width = 31.000000000000000000
-    end
-    object StringColumn3: TStringColumn
-      Header = 'Kategorija'
-      HeaderSettings.TextSettings.WordWrap = False
-      Size.Width = 31.000000000000000000
+      Size.Width = 74.000000000000000000
     end
     object StringColumn4: TStringColumn
       Header = 'Opis'
       HeaderSettings.TextSettings.WordWrap = False
-      Size.Width = 30.000000000000000000
+      Size.Width = 71.000000000000000000
     end
     object StringColumn5: TStringColumn
       Header = 'Iznos'
       HeaderSettings.TextSettings.WordWrap = False
-      Size.Width = 31.000000000000000000
+      Size.Width = 87.000000000000000000
     end
     object StringColumn6: TStringColumn
       Header = 'Vozilo'
       HeaderSettings.TextSettings.WordWrap = False
-      Size.Width = 31.000000000000000000
+      Size.Width = 86.000000000000000000
     end
     object StringColumn7: TStringColumn
       Header = 'Voza'#269
       HeaderSettings.TextSettings.WordWrap = False
-      Size.Width = 30.000000000000000000
+      Size.Width = 80.000000000000000000
     end
     object StringColumn8: TStringColumn
       Header = 'Broj '
       HeaderSettings.TextSettings.WordWrap = False
-      Size.Width = 31.000000000000000000
+      Size.Width = 85.000000000000000000
     end
   end
   object lblUkupno: TLabel
-    Position.X = 136.000000000000000000
-    Position.Y = 424.000000000000000000
-    Size.Width = 41.000000000000000000
+    Position.X = 26.000000000000000000
+    Position.Y = 488.000000000000000000
+    Size.Width = 279.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = '--------'
+    Text = '----------------------------------------------------------'
     TabOrder = 8
+  end
+  object Label1: TLabel
+    Position.X = 24.000000000000000000
+    Position.Y = 39.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Od:'
+    TabOrder = 11
+    object Label2: TLabel
+      Position.X = 184.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Do:'
+      TabOrder = 4
+    end
   end
   object ADOConnection1: TADOConnection
     ConnectionString = 
@@ -129,13 +146,13 @@ object Form11: TForm11
       'nsportnu-kompaniju-MPMTransport\mpmtransportdelphi\Program\Win32' +
       '\Debug\mpmtransport.mdb;Persist Security Info=False'
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 136
-    Top = 8
+    Left = 152
+    Top = 96
   end
   object ADOQuery1: TADOQuery
     Connection = ADOConnection1
     Parameters = <>
-    Left = 248
-    Top = 8
+    Left = 144
+    Top = 24
   end
 end

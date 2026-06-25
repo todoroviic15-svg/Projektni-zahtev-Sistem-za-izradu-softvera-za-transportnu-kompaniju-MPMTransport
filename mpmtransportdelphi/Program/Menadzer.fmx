@@ -31,7 +31,7 @@ object Form3: TForm3
     Size.Height = 79.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'PrijavaBtnStyle1'
-    TabOrder = 20
+    TabOrder = 24
     Text = 'Isporuke'
     TextSettings.Font.Size = 15.000000000000000000
     TextSettings.Font.StyleExt = {00070000000200000004000000}
@@ -61,6 +61,7 @@ object Form3: TForm3
         TextSettings.Font.Size = 15.000000000000000000
         TextSettings.Font.StyleExt = {00070000000200000004000000}
         TextSettings.Trimming = None
+        OnClick = Button2Click
         object Button3: TButton
           StyledSettings = [Family]
           Position.X = 152.000000000000000000

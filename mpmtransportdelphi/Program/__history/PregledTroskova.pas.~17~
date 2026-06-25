@@ -1,0 +1,181 @@
+unit PregledTroskova;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls, System.Rtti, FMX.Grid.Style,
+  FMX.Grid, Data.DB, Data.Win.ADODB, FMX.ScrollBox, FMX.ListBox,
+  FMX.DateTimeCtrls, System.DateUtils;
+
+type
+  TFormPregledTroskova = class(TForm)
+    SpeedButton1: TSpeedButton;
+    dtOd: TDateEdit;
+    dtDo: TDateEdit;
+    cmbKategorija: TComboBox;
+    cmbVozilo: TComboBox;
+    cmbVozac: TComboBox;
+    btnPrikazi: TButton;
+    grid: TStringGrid;
+    lblUkupno: TLabel;
+    ADOConnection1: TADOConnection;
+    ADOQuery1: TADOQuery;
+    StringColumn1: TStringColumn;
+    StringColumn2: TStringColumn;
+    StringColumn3: TStringColumn;
+    StringColumn4: TStringColumn;
+    StringColumn5: TStringColumn;
+    StringColumn6: TStringColumn;
+    StringColumn7: TStringColumn;
+    StringColumn8: TStringColumn;
+    procedure btnPrikaziClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+  private
+    procedure PopuniFiltere;
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPregledTroskova: TFormPregledTroskova;
+
+implementation
+
+uses Menadzer;
+
+{$R *.fmx}
+
+procedure TFormPregledTroskova.PopuniFiltere;
+begin
+  // Kategorije
+  cmbKategorija.Items.Clear;
+  cmbKategorija.Items.Add('Sve kategorije');
+  ADOQuery1.Close;
+  ADOQuery1.SQL.Text := 'SELECT ID, Naziv FROM KategorijaTroska ORDER BY Naziv';
+  ADOQuery1.Open;
+  while not ADOQuery1.Eof do
+  begin
+    cmbKategorija.Items.AddObject(ADOQuery1.FieldByName('Naziv').AsString,
+      TObject(ADOQuery1.FieldByName('ID').AsInteger));
+    ADOQuery1.Next;
+  end;
+  ADOQuery1.Close;
+  cmbKategorija.ItemIndex := 0;
+
+  // Vozila
+  cmbVozilo.Items.Clear;
+  cmbVozilo.Items.Add('Sva vozila');
+  ADOQuery1.SQL.Text := 'SELECT ID, registarski_broj AS RegistarskiBroj FROM Vozila';
+  ADOQuery1.Open;
+  while not ADOQuery1.Eof do
+  begin
+    cmbVozilo.Items.AddObject(ADOQuery1.FieldByName('registarski_broj').AsString,
+      TObject(ADOQuery1.FieldByName('ID').AsInteger));
+    ADOQuery1.Next;
+  end;
+  ADOQuery1.Close;
+  cmbVozilo.ItemIndex := 0;
+
+  // Vozaci
+  cmbVozac.Items.Clear;
+  cmbVozac.Items.Add('Svi vozaci');
+  ADOQuery1.SQL.Text := 'SELECT id, korisnickoime FROM login WHERE role = ''vozac''';
+  ADOQuery1.Open;
+  while not ADOQuery1.Eof do
+  begin
+    cmbVozac.Items.AddObject(ADOQuery1.FieldByName('korisnickoime').AsString,
+      TObject(ADOQuery1.FieldByName('id').AsInteger));
+    ADOQuery1.Next;
+  end;
+  ADOQuery1.Close;
+  cmbVozac.ItemIndex := 0;
+end;
+
+procedure TFormPregledTroskova.btnPrikaziClick(Sender: TObject);
+var
+  Sql: string;
+  Ukupno: Double;
+  Row: Integer;
+begin
+  Sql :=
+    'SELECT t.ID, t.Datum, k.Naziv AS Kategorija, t.Opis, t.Iznos, t.BrojDokumenta, ' +
+    '  v.registarski_broj AS RegistarskiBroj, l.korisnickoime AS VozacIme '  +
+    'FROM ((Trosak t ' +
+    'INNER JOIN KategorijaTroska k ON k.ID = t.KategorijaID) ' +
+    'LEFT JOIN Vozila v ON v.ID = t.VoziloID) ' +
+    'LEFT JOIN login l ON l.id = t.VozacID ' +
+    'WHERE t.Datum BETWEEN :od AND :do ';
+
+  if cmbKategorija.ItemIndex > 0 then
+    Sql := Sql + 'AND t.KategorijaID = :kat ';
+  if cmbVozilo.ItemIndex > 0 then
+    Sql := Sql + 'AND t.VoziloID = :voz ';
+  if cmbVozac.ItemIndex > 0 then
+    Sql := Sql + 'AND t.VozacID = :vozac ';
+
+  Sql := Sql + 'ORDER BY t.Datum DESC';
+
+  ADOQuery1.Close;
+  ADOQuery1.SQL.Text := Sql;
+  ADOQuery1.Parameters.ParamByName('od').Value := dtOd.Date;
+  ADOQuery1.Parameters.ParamByName('do').Value := dtDo.Date;
+  if cmbKategorija.ItemIndex > 0 then
+    ADOQuery1.Parameters.ParamByName('kat').Value :=
+      Integer(cmbKategorija.Items.Objects[cmbKategorija.ItemIndex]);
+  if cmbVozilo.ItemIndex > 0 then
+    ADOQuery1.Parameters.ParamByName('voz').Value :=
+      Integer(cmbVozilo.Items.Objects[cmbVozilo.ItemIndex]);
+  if cmbVozac.ItemIndex > 0 then
+    ADOQuery1.Parameters.ParamByName('vozac').Value :=
+      Integer(cmbVozac.Items.Objects[cmbVozac.ItemIndex]);
+  ADOQuery1.Open;
+
+  grid.RowCount := 1;
+  Row := 0;
+  Ukupno := 0;
+  while not ADOQuery1.Eof do
+  begin
+    grid.RowCount := Row + 1;
+    grid.Cells[0, Row] := ADOQuery1.FieldByName('ID').AsString;
+    grid.Cells[1, Row] := FormatDateTime('dd.mm.yyyy', ADOQuery1.FieldByName('Datum').AsDateTime);
+    grid.Cells[2, Row] := ADOQuery1.FieldByName('Kategorija').AsString;
+    grid.Cells[3, Row] := ADOQuery1.FieldByName('Opis').AsString;
+    grid.Cells[4, Row] := FormatFloat('#,##0.00', ADOQuery1.FieldByName('Iznos').AsFloat);
+    grid.Cells[5, Row] := ADOQuery1.FieldByName('registarski_broj').AsString;
+    grid.Cells[6, Row] := ADOQuery1.FieldByName('VozacIme').AsString;
+    grid.Cells[7, Row] := ADOQuery1.FieldByName('BrojDokumenta').AsString;
+
+    Ukupno := Ukupno + ADOQuery1.FieldByName('Iznos').AsFloat;
+    Inc(Row);
+    ADOQuery1.Next;
+  end;
+  ADOQuery1.Close;
+
+  lblUkupno.Text := 'UKUPNO: ' + FormatFloat('#,##0.00', Ukupno) + ' din';
+end;
+
+procedure TFormPregledTroskova.FormCreate(Sender: TObject);
+begin
+  ADOConnection1.ConnectionString :=
+    'Provider=Microsoft.Jet.OLEDB.4.0;' +
+    'Data Source=' + ExtractFilePath(ParamStr(0)) + 'mpmtransport.mdb;';
+  ADOConnection1.LoginPrompt := False;
+  ADOConnection1.Connected := True;
+
+  dtOd.Date := EncodeDate(YearOf(Date), MonthOf(Date), 1);
+  dtDo.Date := Date;
+  PopuniFiltere;
+  btnPrikaziClick(nil);
+end;
+
+procedure TFormPregledTroskova.SpeedButton1Click(Sender: TObject);
+begin
+  Close;
+  Form3.Show;
+end;
+
+end.

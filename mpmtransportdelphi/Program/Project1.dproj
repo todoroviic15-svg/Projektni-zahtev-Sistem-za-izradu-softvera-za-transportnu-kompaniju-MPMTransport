@@ -157,6 +157,10 @@
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="PregledTroskova.pas">
+            <Form>FormPregledTroskova</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="AnalizaTroskova.pas">
             <Form>Form11</Form>
             <FormType>fmx</FormType>
         </DCCReference>

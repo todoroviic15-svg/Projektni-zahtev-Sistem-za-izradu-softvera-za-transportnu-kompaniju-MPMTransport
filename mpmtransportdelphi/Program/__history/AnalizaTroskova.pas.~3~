@@ -1,0 +1,66 @@
+unit AnalizaTroskova;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls, System.Rtti, FMX.Grid.Style,
+  FMX.ScrollBox, FMX.Grid, FMX.ListBox, FMX.Edit, Data.DB, Data.Win.ADODB;
+
+type
+  TForm11 = class(TForm)
+    SpeedButton1: TSpeedButton;
+    edtGodina: TEdit;
+    cmbMesec: TComboBox;
+    btnPrikazi: TButton;
+    grid: TStringGrid;
+    lblUkupnoPlanirano: TLabel;
+    lblUkupnoOstvareno: TLabel;
+    gridOdluke: TStringGrid;
+    ADOQuery1: TADOQuery;
+    ADOConnection1: TADOConnection;
+    StringColumn1: TStringColumn;
+    StringColumn2: TStringColumn;
+    StringColumn3: TStringColumn;
+    StringColumn4: TStringColumn;
+    StringColumn5: TStringColumn;
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form11: TForm11;
+
+implementation
+
+uses Menadzer;
+
+{$R *.fmx}
+
+procedure TForm11.FormCreate(Sender: TObject);
+begin
+                ADOConnection1.ConnectionString :=
+    'Provider=Microsoft.Jet.OLEDB.4.0;' +
+    'Data Source=' + ExtractFilePath(ParamStr(0)) + 'mpmtransport.mdb;';
+  ADOConnection1.LoginPrompt := False;
+  ADOConnection1.Connected := True;
+
+  cmbMesec.Items.Text :=
+    'Januar'#13'Februar'#13'Mart'#13'April'#13'Maj'#13'Jun'#13 +
+    'Jul'#13'Avgust'#13'Septembar'#13'Oktobar'#13'Novembar'#13'Decembar';
+  cmbMesec.ItemIndex := MonthOf(Date) - 1;
+  edtGodina.Text := YearOf(Date).ToString;
+end;
+
+procedure TForm11.SpeedButton1Click(Sender: TObject);
+begin
+            Form3.Show;
+            Close;
+end;
+
+end.

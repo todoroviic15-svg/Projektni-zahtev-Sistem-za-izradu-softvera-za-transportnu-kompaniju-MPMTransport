@@ -1,11 +1,5 @@
 program Project1;
 
-
-
-
-
-
-
 uses
   System.StartUpCopy,
   FMX.Forms,
@@ -16,7 +10,8 @@ uses
   Unit5 in 'Unit5.pas' {Form5},
   Klijent in 'Klijent.pas' {Form6},
   Vozac in 'Vozac.pas' {Form7},
-  PregledTroskova in 'PregledTroskova.pas' {Form11};
+  PregledTroskova in 'PregledTroskova.pas' {FormPregledTroskova},
+  AnalizaTroskova in 'AnalizaTroskova.pas' {Form11};
 
 {$R *.res}
 
@@ -29,6 +24,7 @@ begin
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm6, Form6);
   Application.CreateForm(TForm7, Form7);
+  Application.CreateForm(TFormPregledTroskova, FormPregledTroskova);
   Application.CreateForm(TForm11, Form11);
   Application.Run;
 end.
