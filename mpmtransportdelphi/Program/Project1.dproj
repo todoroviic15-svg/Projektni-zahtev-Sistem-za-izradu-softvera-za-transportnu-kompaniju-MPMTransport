@@ -156,16 +156,8 @@
             <Form>Form7</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Unit8.pas">
-            <Form>IsporukaStartStop</Form>
-            <FormType>fmx</FormType>
-        </DCCReference>
-        <DCCReference Include="Unit9.pas">
-            <Form>Form9</Form>
-            <FormType>fmx</FormType>
-        </DCCReference>
-        <DCCReference Include="Unit10.pas">
-            <Form>Form10</Form>
+        <DCCReference Include="PregledTroskova.pas">
+            <Form>Form11</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

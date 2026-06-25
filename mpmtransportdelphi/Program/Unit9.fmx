@@ -21,8 +21,8 @@ object Form9: TForm9
     Size.PlatformDefault = False
     TabOrder = 1
     OnCellClick = StringGridVoznjeCellClick
-    Viewport.Width = 308.000000000000000000
-    Viewport.Height = 305.000000000000000000
+    Viewport.Width = 288.000000000000000000
+    Viewport.Height = 264.000000000000000000
     object IntegerColumn1: TIntegerColumn
       HeaderSettings.TextSettings.WordWrap = False
     end
@@ -73,7 +73,6 @@ object Form9: TForm9
     StyleLookup = 'arrowlefttoolbutton'
     Text = 'SpeedButton1'
     TextSettings.Trimming = None
-    OnClick = SpeedButton1Click
   end
   object ADOQueryVoznje: TADOQuery
     Connection = ADOConnection1

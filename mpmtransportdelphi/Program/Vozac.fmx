@@ -44,7 +44,6 @@ object Form7: TForm7
         TextSettings.Font.Size = 15.000000000000000000
         TextSettings.Font.StyleExt = {00070000000200000004000000}
         TextSettings.Trimming = None
-        OnClick = btnIsporukeClick
         object btnProfil: TButton
           StyledSettings = [Family]
           Position.X = 104.000000000000000000

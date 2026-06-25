@@ -1,7 +1,7 @@
 object Form3: TForm3
   Left = 0
   Top = 0
-  Caption = 'Form3'
+  Caption = 'Menadzer'
   ClientHeight = 536
   ClientWidth = 324
   Fill.Color = claLightgray
@@ -31,12 +31,11 @@ object Form3: TForm3
     Size.Height = 79.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'PrijavaBtnStyle1'
-    TabOrder = 17
+    TabOrder = 20
     Text = 'Isporuke'
     TextSettings.Font.Size = 15.000000000000000000
     TextSettings.Font.StyleExt = {00070000000200000004000000}
     TextSettings.Trimming = None
-    OnClick = PrijavaBtnClick
     object DugmeFakture: TButton
       StyledSettings = [Family]
       Position.X = 152.000000000000000000

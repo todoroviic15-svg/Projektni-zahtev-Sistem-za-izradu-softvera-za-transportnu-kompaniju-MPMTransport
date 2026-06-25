@@ -16,9 +16,7 @@ uses
   Unit5 in 'Unit5.pas' {Form5},
   Klijent in 'Klijent.pas' {Form6},
   Vozac in 'Vozac.pas' {Form7},
-  Unit8 in 'Unit8.pas' {IsporukaStartStop},
-  Unit9 in 'Unit9.pas' {Form9},
-  Unit10 in 'Unit10.pas' {Form10};
+  PregledTroskova in 'PregledTroskova.pas' {Form11};
 
 {$R *.res}
 
@@ -31,9 +29,6 @@ begin
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm6, Form6);
   Application.CreateForm(TForm7, Form7);
-  Application.CreateForm(TIsporukaStartStop, IsporukaStartStop);
-  Application.CreateForm(TForm9, Form9);
-  Application.CreateForm(TForm10, Form10);
-  Application.CreateForm(TForm10, Form10);
+  Application.CreateForm(TForm11, Form11);
   Application.Run;
 end.

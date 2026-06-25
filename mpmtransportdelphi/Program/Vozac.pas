@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls,UnosPodataka, FMX.Objects, FMX.Maps, Data.DB, Data.Win.ADODB, Menadzer, Unit8;
+  FMX.Controls.Presentation, FMX.StdCtrls,UnosPodataka, FMX.Objects, FMX.Maps, Data.DB, Data.Win.ADODB, Menadzer;
 
 type
   TForm7 = class(TForm)
@@ -19,7 +19,6 @@ type
     ADOQuery1: TADOQuery;
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure btnIsporukeClick(Sender: TObject);
   private
   public
   end;
@@ -33,12 +32,6 @@ implementation
 
  {$R *.fmx}
 
-
-procedure TForm7.btnIsporukeClick(Sender: TObject);
-begin
-        with TIsporukaStartStop.Create(Self) do Show;
-        Hide;
-end;
 
 procedure TForm7.FormCreate(Sender: TObject);
 begin

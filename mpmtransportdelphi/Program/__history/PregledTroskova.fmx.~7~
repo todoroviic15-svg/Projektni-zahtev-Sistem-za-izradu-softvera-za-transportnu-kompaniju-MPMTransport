@@ -1,0 +1,140 @@
+object Form11: TForm11
+  Left = 0
+  Top = 0
+  ActiveControl = dtOd
+  Caption = 'Form11'
+  ClientHeight = 536
+  ClientWidth = 324
+  Fill.Color = claLightgray
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object SpeedButton1: TSpeedButton
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'arrowlefttoolbutton'
+    Text = 'SpeedButton1'
+    TextSettings.Trimming = None
+    OnClick = SpeedButton1Click
+  end
+  object dtOd: TDateEdit
+    Date = 46198.000000000000000000
+    Position.X = 24.000000000000000000
+    Position.Y = 64.000000000000000000
+    TabOrder = 1
+  end
+  object dtDo: TDateEdit
+    Date = 46198.000000000000000000
+    Position.X = 205.000000000000000000
+    Position.Y = 64.000000000000000000
+    TabOrder = 2
+  end
+  object cmbKategorija: TComboBox
+    Position.X = 24.000000000000000000
+    Position.Y = 104.000000000000000000
+    TabOrder = 3
+  end
+  object cmbVozilo: TComboBox
+    Position.X = 205.000000000000000000
+    Position.Y = 104.000000000000000000
+    TabOrder = 4
+  end
+  object cmbVozac: TComboBox
+    Position.X = 24.000000000000000000
+    Position.Y = 152.000000000000000000
+    TabOrder = 5
+  end
+  object btnPrikazi: TButton
+    Position.X = 205.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 100.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'Prikazi'
+    TextSettings.Trimming = None
+  end
+  object grid: TStringGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 24.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 281.000000000000000000
+    Size.Height = 169.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Viewport.Width = 261.000000000000000000
+    Viewport.Height = 144.000000000000000000
+    object StringColumn1: TStringColumn
+      Header = 'ID'
+      HeaderSettings.TextSettings.WordWrap = False
+      Size.Width = 27.000000000000000000
+    end
+    object StringColumn2: TStringColumn
+      Header = 'Datum'
+      HeaderSettings.TextSettings.WordWrap = False
+      Size.Width = 31.000000000000000000
+    end
+    object StringColumn3: TStringColumn
+      Header = 'Kategorija'
+      HeaderSettings.TextSettings.WordWrap = False
+      Size.Width = 31.000000000000000000
+    end
+    object StringColumn4: TStringColumn
+      Header = 'Opis'
+      HeaderSettings.TextSettings.WordWrap = False
+      Size.Width = 30.000000000000000000
+    end
+    object StringColumn5: TStringColumn
+      Header = 'Iznos'
+      HeaderSettings.TextSettings.WordWrap = False
+      Size.Width = 31.000000000000000000
+    end
+    object StringColumn6: TStringColumn
+      Header = 'Vozilo'
+      HeaderSettings.TextSettings.WordWrap = False
+      Size.Width = 31.000000000000000000
+    end
+    object StringColumn7: TStringColumn
+      Header = 'Voza'#269
+      HeaderSettings.TextSettings.WordWrap = False
+      Size.Width = 30.000000000000000000
+    end
+    object StringColumn8: TStringColumn
+      Header = 'Broj '
+      HeaderSettings.TextSettings.WordWrap = False
+      Size.Width = 31.000000000000000000
+    end
+  end
+  object lblUkupno: TLabel
+    Position.X = 136.000000000000000000
+    Position.Y = 424.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = '--------'
+    TabOrder = 8
+  end
+  object ADOConnection1: TADOConnection
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Michael\Do' +
+      'cuments\GitHub\Projektni-zahtev-Sistem-za-izradu-softvera-za-tra' +
+      'nsportnu-kompaniju-MPMTransport\mpmtransportdelphi\Program\Win32' +
+      '\Debug\mpmtransport.mdb;Persist Security Info=False'
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 136
+    Top = 8
+  end
+  object ADOQuery1: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    Left = 248
+    Top = 8
+  end
+end
